@@ -1,1 +1,0 @@
-const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PWD}@oldbookclusteratlas.annxhk3.mongodb.net/test`
