@@ -27,8 +27,7 @@ export default class connect implements IConnect {
 
 }
 
-export const getConnectDataBase = async (): Promise<connect> => {
+export const getConnectDataBase = async (): Promise<any> => {
     const database: connect = new connect();
-    await database.authenticate();
-    return database;
+    return await database.authenticate();
 }
