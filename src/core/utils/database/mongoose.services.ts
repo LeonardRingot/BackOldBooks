@@ -1,7 +1,7 @@
 import mongoose, { Mongoose } from "mongoose"
 import config from 'config'
 import { IConnect } from "~/core/interfaces/database.interface"
-import logger from "../logger";
+import logger from '../logger'
 
 export default class connect implements IConnect {
 
@@ -30,6 +30,5 @@ export default class connect implements IConnect {
 export const getConnectDataBase = async (): Promise<connect> => {
     const database: connect = new connect();
     await database.authenticate();
-
     return database;
 }
