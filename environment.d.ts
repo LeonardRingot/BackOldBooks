@@ -6,6 +6,8 @@ declare namespace NodeJS {
         readonly DB_PWD: string;
         readonly DB_NAME: string;
         readonly CLUSTER_URI: string;
+        readonly PUBLIC_KEY: string;
+        readonly PRIVATE_KEY: string;
     }
     
 }
