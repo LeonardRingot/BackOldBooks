@@ -5,4 +5,6 @@ export default {
     port: process.env.PORT,
     dbUri: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PWD}@${process.env.CLUSTER_URI}/${process.env.DB_NAME}`,
     saltWorkFactor:10,
+    publicKey: process.env.PUBLIC_KEY,
+    privateKey: process.env.PRIVATE_KEY
 }
