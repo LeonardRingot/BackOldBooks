@@ -15,7 +15,7 @@ app.use(apiRouter)
 databaseConnect().catch(err => console.log(err));
 const port = process.env.PORT
 app.listen(port, () => {
-    console.log(`Serveur démarré sur le port ${port}...`)
+    console.log(`Serveur démarré sur le port SIUUUU  ${port}...`)
 })
 app.get("/", (req: Request, res: Response) => {
     res.send("SWAGGER : /api/docs")
