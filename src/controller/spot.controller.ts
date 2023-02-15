@@ -1,34 +1,34 @@
 const { Router } = require('express')
 
-import { bookHandler } from "../core/init";
+import { spotHandler } from "../core/init";
 
-export const bookController = Router();
+export const spotController = Router();
 
 /**
  * @swagger
  * tags:
- *      name: Books
- *      description: Manage books
+ *      name: Spots
+ *      description: Manage spots
  */
 
 /**
  * @openapi
- * /api/books:
+ * /api/spots:
  *   get:
- *      tags: [Books]
- *      description: Get list of books
+ *      tags: [Spots]
+ *      description: Get list of spots
  *      responses:
  *        200:
  *          description: Get all.
  */
-bookController.get('/', bookHandler.getBooks)
+spotController.get('/', spotHandler.getSpots)
 
 /**
  * @openapi
- * /api/books/{id}:
+ * /api/spots/{id}:
  *   get:
- *      tags: [Books]
- *      description: Get book by id.
+ *      tags: [Spots]
+ *      description: Get spot by id.
  *      parameters:
  *       - name: id
  *         in: path
@@ -39,14 +39,14 @@ bookController.get('/', bookHandler.getBooks)
  *        200:
  *          description: Get by id.
  */
-bookController.get('/:id', bookHandler.getBookById)
+spotController.get('/:id', spotHandler.getSpotById)
 
 /**
  * @openapi
- * /api/books:
+ * /api/spots:
  *   post:
- *      tags: [Books]
- *      description: Create a new book.
+ *      tags: [Spots]
+ *      description: Create a new spot.
  *      consumes:
  *       - application/json
  *      parameters:
@@ -54,20 +54,20 @@ bookController.get('/:id', bookHandler.getBookById)
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre", "authorBook": "Leo","userId": null, "date":null, "spotID": '15'}
+ *         default: { "nameBook": "Mon livre", "authorBook": "Leo", "spotID": '12'}
  *      responses:
  *        200:
  *          description: Create.
  */
-bookController.post('/', bookHandler.createBook)
+spotController.post('/', spotHandler.createSpot)
 
 
 /**
  * @openapi
- * /api/books/{id}:
+ * /api/spots/{id}:
  *  put:
- *      tags: [Books]
- *      description: Update a book.
+ *      tags: [Spots]
+ *      description: Update a spot.
  *      consumes:
  *       - application/json
  *      parameters:
@@ -75,32 +75,32 @@ bookController.post('/', bookHandler.createBook)
  *         in: path
  *         required: true
  *         type: string
- *         default: 1
+ *         default: 15
  *       - name: JSON
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "userId": null, "spotID": '15'}
+ *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "userId": null, "spotID": '13'}
  *      responses:
  *        200:
  *          description: Update.
  */
-bookController.put('/:id', bookHandler.updateBook)
+spotController.put('/:id', spotHandler.updateSpot)
 
 /**
  * @openapi
- * /api/books/{id}:
+ * /api/spots/{id}:
  *  delete:
- *      tags: [Books]
- *      description: Delete a book
+ *      tags: [Spots]
+ *      description: Delete a spot
  *      parameters:
  *       - name: id
  *         in: path
  *         required: true
  *         type: string
- *         default: 1
+ *         default: 15
  *      responses:
  *        200:
  *          description: Delete.
  */
-bookController.delete('/:id', bookHandler.deleteBook)
+spotController.delete('/:id', spotHandler.deleteSpot)
