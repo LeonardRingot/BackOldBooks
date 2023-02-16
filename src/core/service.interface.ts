@@ -8,7 +8,7 @@ export interface IService<T> {
 
 export interface IApiService {
     listAll(): Promise<any[]>;
-    Registered(id: string): Promise<any[]>;
+    //Registered(id: string): Promise<any[]>;
 }
 export interface IEmailService{
     sendEmail():Promise<any[]>;

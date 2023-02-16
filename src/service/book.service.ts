@@ -23,7 +23,7 @@ export class BookService implements IService<BookDTO> {
 
     async update(data: BookDTO, id: string): Promise<string | boolean | undefined> {
         let date
-        if (data.userId == null) {
+        if (data.code == null) {
             date = null
         } else {
             date = new Date()

@@ -1,31 +1,51 @@
 import mongoose from 'mongoose'
-import { Book } from '../models/book.models';
+//import { Book } from '../models/book.models';
 import { Spot } from '../models/spot.model';
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PWD}@oldbookclusteratlas.annxhk3.mongodb.net/test`
 
 export async function databaseConnect() {
     mongoose.set('strictQuery', true)
     await mongoose.connect(uri);
-
-    const book1 = {
-        nameBook: "livre1",
-        authorBook: "bah c moi",
-        date: null,
-        userId: null,
-        spotID: '15',
-    }
-    const book2 = {
-        nameBook: "livre 2",
-        authorBook: "personne",
-        date: null,
-        userId: null,
-        spotID: '16',
-    }
-
+    
     const newSpot = new Spot({
-        addresseSpot: 'ICI C PARIS'
-    })
-    newSpot.save()
-
-    Book.insertMany([book1, book2])
+        addresseSpot: 'Rue du régiment de la chaudière'
+    });
+    newSpot.save((error, spot) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log('Spot saved successfully!');
+          
+          // Create two books with spotID set to the new spot's _id
+          const { Book } = require('../models/book.models');
+          const book1 = new Book({
+            nameBook: 'The Witcher: Le dernier Voeu',
+            authorBook: 'Andrzej Sapkowski',
+            spotID: spot._id
+          });
+          const book2 = new Book({
+            nameBook: "The Witcher: l'epee de la providence",
+            authorBook: 'Andrzej Sapkowski',
+            spotID: spot._id
+          });
+          
+          book1.save((error: any) => {
+            if (error) {
+              console.error(error);
+            } else {
+              console.log('Book 1 saved successfully!');
+            }
+          });
+          
+          book2.save((error:any) => {
+            if (error) {
+              console.error(error);
+            } else {
+              console.log('Book 2 saved successfully!');
+            }
+          });
+        }
+    
+    //Book.insertMany([bookOne, bookTwo])
+})
 }

@@ -9,7 +9,7 @@ export class BookMapper {
             nameBook: book.nameBook, 
             authorBook: book.authorBook,
             date: book.date,
-            userId: book.userId,
+            code: book.code,
             spotID: book.spotID,
             createdAt: book.createdAt
         }

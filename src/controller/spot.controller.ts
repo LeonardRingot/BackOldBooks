@@ -80,7 +80,7 @@ spotController.post('/', spotHandler.createSpot)
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "userId": null, "spotID": '13'}
+ *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "code": null, "spotID": '13'}
  *      responses:
  *        200:
  *          description: Update.

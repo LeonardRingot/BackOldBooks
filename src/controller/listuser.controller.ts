@@ -23,22 +23,5 @@ export const listuserController = Router();
  */
 listuserController.get('/', listuserHandler.getList)
 
-/**
- * @openapi
- * /api/list:
- *   post:
- *      tags: [List]
- *      description: Is registered.
- *      consumes:
- *       - application/json
- *      parameters:
- *       - name: JSON
- *         in: body
- *         required: true
- *         type: object
- *         default: { "code": "43DZFDFR"}
- *      responses:
- *        200:
- *          description: IsRegistered.
- */
-listuserController.post('/', listuserHandler.Registered)
+
+//listuserController.post('/', listuserHandler.Registered)

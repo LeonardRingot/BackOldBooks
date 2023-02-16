@@ -3,7 +3,7 @@ export type BookDTO = {
     nameBook: string, 
     authorBook: string,
     date?: Date,
-    userId?: string,
+    code?: string,
     spotID: string,
     createdAt?: Date
 }

@@ -54,7 +54,7 @@ bookController.get('/:id', bookHandler.getBookById)
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre", "authorBook": "Leo","userId": null, "date":null, "spotID": '15'}
+ *         default: { "nameBook": "Mon livre", "authorBook": "Leo","code": null, "date":null, "spotID": '15'}
  *      responses:
  *        200:
  *          description: Create.
@@ -80,7 +80,7 @@ bookController.post('/', bookHandler.createBook)
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "userId": null, "spotID": '15'}
+ *         default: { "nameBook": "Mon livre update", "authorBook": "Leo", "code": null, "spotID": '15'}
  *      responses:
  *        200:
  *          description: Update.

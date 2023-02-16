@@ -5,8 +5,12 @@ export const bookSchema = new Schema({
     nameBook: String,
     authorBook: String,
     date: Date,
-    userId: String,
-    spotID: String,
+    code: String,
+    spotID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Spot',
+        default: null
+      },
     createdAt: {
         type: Date,
         immutable: true,

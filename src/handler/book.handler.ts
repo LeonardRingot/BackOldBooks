@@ -32,9 +32,9 @@ export class BookHandler {
     }
 
     createBook = async (req: Request, res: Response) => {
-        const { nameBook, authorBook, userId, date, spotID } = req.body
+        const { nameBook, authorBook, code, date, spotID } = req.body
         try {
-            const result = await this.bookService.create({ nameBook, authorBook, userId, date, spotID })
+            const result = await this.bookService.create({ nameBook, authorBook, code, date, spotID })
             return res.status(200).json(result)
         } catch (err) {
             return res.status(500).json({ message: 'Error in handler', err })
@@ -43,9 +43,9 @@ export class BookHandler {
 
     updateBook = async (req: Request, res: Response) => {
         const bookId = req.params.id
-        const { nameBook, authorBook, userId, spotID } = req.body
+        const { nameBook, authorBook, code, spotID } = req.body
         try {
-            const result : any = await this.bookService.update({ nameBook, authorBook, userId, spotID }, bookId)
+            const result : any = await this.bookService.update({ nameBook, authorBook, code, spotID }, bookId)
             if (result.nModified) return res.status(500).json({ message: 'Could not update bouquin' })
             return res.status(404).json({ message: 'Book successfully updated.' })
         } catch (err) {
