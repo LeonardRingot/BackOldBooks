@@ -21,11 +21,15 @@ export async function databaseConnect() {
           const book1 = new Book({
             nameBook: 'The Witcher: Le dernier Voeu',
             authorBook: 'Andrzej Sapkowski',
+            date: null,
+            code:null,
             spotID: spot._id
           });
           const book2 = new Book({
             nameBook: "The Witcher: l'epee de la providence",
             authorBook: 'Andrzej Sapkowski',
+            date: null,
+            code:null,
             spotID: spot._id
           });
           
@@ -45,7 +49,5 @@ export async function databaseConnect() {
             }
           });
         }
-    
-    //Book.insertMany([bookOne, bookTwo])
 })
 }

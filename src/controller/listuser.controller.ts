@@ -23,5 +23,3 @@ export const listuserController = Router();
  */
 listuserController.get('/', listuserHandler.getList)
 
-
-//listuserController.post('/', listuserHandler.Registered)

@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 const { Schema } = mongoose
 
 export const bookSchema = new Schema({
-    nameBook: String,
-    authorBook: String,
+    nameBook: { type: String, required: true },
+    authorBook:  { type: String, required: true },
     date: Date,
     code: String,
     spotID: {

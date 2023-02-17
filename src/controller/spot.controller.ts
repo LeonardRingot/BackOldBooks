@@ -54,7 +54,7 @@ spotController.get('/:id', spotHandler.getSpotById)
  *         in: body
  *         required: true
  *         type: object
- *         default: { "nameBook": "Mon livre", "authorBook": "Leo", "spotID": '12'}
+ *         default: { "addresseSpot": "Place Leon Blum"}
  *      responses:
  *        200:
  *          description: Create.

@@ -17,14 +17,4 @@ export class ListuserHandler {
             res.status(500).json(err)
         }
     }
-
-    // Registered = async (req: Request, res: Response) => {
-    //     const userID = req.body.code
-    //     try {
-    //         const result = await this.listService.Registered(userID);
-    //         res.status(200).json(result)
-    //     } catch (err) {
-    //         res.status(500).json(err)
-    //     }
-    // }
 }
