@@ -47,7 +47,7 @@ export class BookHandler {
         try {
             const result : any = await this.bookService.update({ nameBook, authorBook, code, spotID }, bookId)
             if (result.nModified) return res.status(500).json({ message: 'Could not update bouquin' })
-            return res.status(404).json({ message: 'Book successfully updated.' })
+            return res.status(200).json({ message: 'Book successfully updated.' })
         } catch (err) {
             return res.status(500).json({ message: 'Error in handler', err })
         }

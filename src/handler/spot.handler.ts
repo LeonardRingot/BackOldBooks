@@ -28,7 +28,7 @@ export class SpotHandler {
             res.status(200).json(result)
         } catch (err) {
             console.log(err)
-            res.status(500).json({ message: 'ERROR 500', err });
+            res.status(500).json({ message: 'ERROR 500 TA MERE', err });
         }
     }
 
@@ -48,7 +48,7 @@ export class SpotHandler {
         try {
             const result : any = await this.spotService.update({ addresseSpot }, spotID)
             if (!result.modifiedCount) return res.status(500).json({ message: 'Could not update spot' })
-            return res.status(404).json({ message: 'Spot successfully updated.' })
+            return res.status(200).json({ message: 'Spot successfully updated.' })
         } catch (err) {
             return res.status(500).json({ message: 'Error in handler', err })
         }
