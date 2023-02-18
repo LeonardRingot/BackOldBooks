@@ -23,3 +23,22 @@ export const listuserController = Router();
  */
 listuserController.get('/', listuserHandler.getList)
 
+/**
+ * @openapi
+ * /api/list:
+ *   post:
+ *      tags: [List]
+ *      description: Login.
+ *      consumes:
+ *       - application/json
+ *      parameters:
+ *       - name: JSON
+ *         in: body
+ *         required: true
+ *         type: object
+ *         default: { "name": "Brigitte", "code": "43DZFDFR"}
+ *      responses:
+ *        200:
+ *          description: login.
+ */
+listuserController.post('/', listuserHandler.login)
